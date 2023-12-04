@@ -7,6 +7,9 @@ const app=express();
 app.get('/',(req,res)=>{
     res.send("hello mates");
 })
+app.get('/testing',(req,res)=>{
+    res.send("hello testing");
+})
 
 app.get("/user/:name",(req,res)=>{
     const {name}=req.params;
