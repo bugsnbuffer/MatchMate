@@ -40,3 +40,22 @@ similarPairs.forEach((pair) => {
     ` ${pair.user1.name} and  ${pair.user2.name} have a similarity score of ${pair.similarity}%`
   );
 });
+
+
+
+
+
+
+ export const checkCompatibility = (userToMatch, users) => {
+  for (let i = 0; i < users.length; i++) {
+    let score = checkScore(userToMatch.interest,users[i].interest)
+
+     users[i]["compatablity"] = score
+  }
+  return users
+};
+
+
+
+
+
