@@ -1,22 +1,17 @@
 import express from "express";
-import ConnectDB from "./Database/conn.js";
-import User from "./Models/UserModel.js";
+import ConnectDB from "./database/conn.js";
+
 
 const app=express();
 
 app.get('/',(req,res)=>{
-    res.send("hello mates");
-})
-app.get('/testing',(req,res)=>{
-    res.send("hello testing");
+    res.send("hello mates")
 })
 
-app.get("/user/:name",(req,res)=>{
-    const {name}=req.params;
-    const user =new User({name});
-    user.save().then(()=>res.send("user saved"))
-})
 
+app.get('/user',(req,res)=>{
+    res.send("hello user")
+})
 
 ConnectDB().then(()=>{
     app.listen(3000,()=>{
