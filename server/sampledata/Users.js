@@ -6,7 +6,7 @@ const Users=[
     },
     {
         name:"sourabh",
-        bio:"iam a mern developer",
+        bio:"iam a mern develope",
         interest:new Set(["football","cricket","dancing"])
     },
     {
