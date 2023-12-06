@@ -28,7 +28,7 @@ passport.use(
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate(
+      User.findOrCreate({googleId:profile._json.sub},
         {
           googleId: profile._json.sub,
           username: profile._json.name,
@@ -43,7 +43,9 @@ passport.use(
 );
 
 export const logoutUser=asyncHandler(async(req,res)=>{
-  await req.logOut();
+   req.logOut().then(()=>{
+    res.send("logged out")
+  });
 })
 
 const findCompatiblity = asyncHandler(async (req, res) => {

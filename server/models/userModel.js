@@ -3,7 +3,8 @@ import passportLocalMongoose from "passport-local-mongoose";
 import findOrCreate from "mongoose-findorcreate";
 
 const userSchema = new mongoose.Schema({
-  name: String,
+  username: String,
+  email:String,
   compatablity: {
     type: Number,
     default: 0,
