@@ -9,6 +9,10 @@ app.get('/',(req,res)=>{
 })
 
 
+app.get('/user',(req,res)=>{
+    res.send("hello user")
+})
+
 ConnectDB().then(()=>{
     app.listen(3000,()=>{
         console.log("server started at port 3000");
