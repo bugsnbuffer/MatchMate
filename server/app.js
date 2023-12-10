@@ -16,16 +16,17 @@ app.get('/',(req,res)=>{
 })
 
 
-app.get('/user',(req,res)=>{
-    res.send("hello user")
-})
+
 
 
 // ----------------------------initialize passport---------------------
 app.use(session({
-    saveUninitialized:false,
+    saveUninitialized:true,
     resave:false,
-    secret:process.env.SECRET
+    secret:process.env.SECRET,
+    cookie:{
+        secure:false
+    }
 }))
 
 app.use(passport.initialize());
@@ -33,6 +34,7 @@ app.use(passport.session());
 
 
 // -------------------------routes here----------------------
+
 app.use("/api",userRoutes)
 app.use("/auth",authRoutes)
 

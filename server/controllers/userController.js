@@ -7,12 +7,12 @@ import passport from "passport";
 
 passport.use(User.createStrategy());
 passport.serializeUser((user,done)=>{
-  done(null,user);
+  done(null,user._id);
 })
 
 passport.deserializeUser((id, done) => {
-  User.findById(id).then(()=>{
-    done(null,user);
+  User.findById(id).then((user)=>{
+    return done(null,user);
   }).catch(()=>{
     done(err,null);
   }) 
@@ -43,9 +43,9 @@ passport.use(
 );
 
 export const logoutUser=asyncHandler(async(req,res)=>{
-   req.logOut().then(()=>{
-    res.send("logged out")
-  });
+   req.logout(()=>{
+    res.send("logged out successfully")
+   })
 })
 
 const findCompatiblity = asyncHandler(async (req, res) => {

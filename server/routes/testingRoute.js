@@ -9,7 +9,7 @@ router.get("/compatiblity/:id",findCompatiblity)
 router.post("/create",createUser)
 router.get('/logout',logoutUser)
 
-router.get('/home',(req,res)=>res.status(200).send("you logged in successfully"))
+router.get('/home',(req,res)=>res.status(200).send(`${req.user.username} you have logged in successfully`))
 
 
 

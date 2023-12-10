@@ -1,0 +1,47 @@
+.main{
+    @apply flex justify-center items-center p-5 h-[90vh]  flex-col w-[60%]
+}
+
+.main h1{
+    @apply text-xl font-extrabold my-2  px-5 capitalize
+}
+
+.main button {
+    @apply flex w-[300px] my-10 p-2 gap-3 h-14 items-center justify-center bg-black text-white rounded-full mx-auto px-5
+}
+
+.main button:hover span{
+    transition: ease-in-out 0.3s;
+    @apply translate-x-2
+}
+
+.main button img{
+    @apply w-[20px]
+}
+
+.main h2{
+    @apply w-[300px] text-start mx-auto text-sm text-gray-600
+}
+
+.sideImage{
+    @apply  w-[300px] rounded-xl bg-black
+}
+
+.sideImage img{
+    @apply rounded-lg
+}
+
+
+
+@media only screen and (max-width:600px){
+    .main button{
+        @apply w-[90%]
+    }
+    .main{
+        @apply w-full
+    }
+
+    .sideImage{
+        @apply  w-[90%] 
+    }
+}

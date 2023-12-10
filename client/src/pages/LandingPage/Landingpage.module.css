@@ -1,0 +1,7 @@
+.main{
+    @apply min-h-screen flex justify-center items-center  bg-[#F8F7F4] text-[#DBA39A]
+}
+
+.main .googleBtn{
+    @apply p-2 border border-black rounded-md
+}
