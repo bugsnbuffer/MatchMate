@@ -1,7 +1,35 @@
+  @import url('https://fonts.googleapis.com/css2?family=Asul&family=Hedvig+Letters+Serif:opsz@12..24&family=Roboto:wght@400;700&display=swap');
+
 .main{
-    @apply min-h-screen flex justify-center items-center  bg-[#F8F7F4] text-[#DBA39A]
+    @apply min-h-screen flex justify-center items-start  bg-[#F8F7F4] 
 }
 
 .main .googleBtn{
     @apply p-2 border border-black rounded-md
+}
+
+.main .topdiv{
+    @apply mt-10 w-[100%] flex flex-col justify-center items-center
+}
+
+.main .topdiv .tagline{
+    @apply text-[16px] text-center capitalize w-[300px] text-gray-600  bg-purple-300 px-8 p-2 rounded-full 
+}
+
+.main .topdiv .txt1{
+    font-family: 'Hedvig Letters Serif', serif;
+    @apply  text-center my-5 w-[700px] text-[50px]
+}
+.main .topdiv .txt2{
+    @apply text-center w-[80%] text-[17px] m-5 text-gray-600
+}
+
+.main .topdiv button{
+    @apply bg-black text-white p-2 rounded-full px-4 m-5
+}
+
+@media only screen and (max-width:600px){
+     .main .topdiv .txt1{
+        @apply text-2xl w-[80%]
+     }
 }

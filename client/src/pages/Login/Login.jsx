@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className="flex">
     <div className="max-sm:hidden w-[40%] border h-[100vh] relative shadow-lg">
-    <img src={logo} className="w-[80px] absolute top-10 left-8 rotate-6 opacity-50 " alt="" />
+    <img src={logo} className="w-[100px] absolute top-10 left-8  opacity-50 " alt="" />
 
 
       <img src={room} className="h-full w-full object-cover" alt="" />
