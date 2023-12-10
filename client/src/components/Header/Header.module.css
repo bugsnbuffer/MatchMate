@@ -1,0 +1,90 @@
+.main{
+    @apply bg-[#F8F7F4]  px-2 flex justify-end  py-5 items-center 
+}
+
+.main .logo{
+    @apply w-[100px] absolute left-10 border  border-dashed  border-gray-700 p-3 bg-gradient-to-br bg-white rounded-full
+}
+
+
+.main .logo:hover{
+   transition:all ease-in-out 0.4s;
+    @apply bg-gradient-to-br from-purple-300 to-purple-500 cursor-pointer
+}
+.main .signupbutton{
+    @apply p-2 m-2 rounded-3xl px-3 bg-black text-white p-3 capitalize 
+}
+
+.main .profile .signupbutton{
+    @apply bg-black text-white flex items-center rounded-full font-bold h-min px-5 text-sm 
+}
+
+
+
+
+.main .profile :hover{
+    @apply cursor-pointer 
+    
+}
+
+.main .menu ul{
+    @apply flex items-center 
+}
+
+.main .menu input{
+    @apply h-10 rounded-full p-[6px] border-l-0 mr-5 h-10 rounded-l-none outline-none border-black border text-lg w-[90%]
+}
+
+
+.main .menu li{
+    @apply m-2 p-2 
+}
+
+.main .menuMobile{
+    @apply sm:hidden
+}
+
+.main .menuBtn{
+    @apply sm:hidden
+}
+
+@media only screen and (max-width:600px){
+    .main{
+        @apply justify-between
+    }
+    .main .logo{
+        @apply w-[100px] 
+    }
+
+    .main .menu{
+        @apply hidden
+    }
+
+    .main .menuMobile{
+        @apply w-[99%]  absolute top-24 border-t border-black z-10 left-1 bg-white p-1 
+
+        
+    }
+
+    .Search{
+        @apply border border-black p-3 border-l-0 rounded-r-full w-[100%] focus:outline-none
+    }
+
+    .main .menuMobile ul {
+        @apply w-[100%]  p-2 mt-10
+    }
+
+    .main .menuMobile li{
+        @apply  capitalize w-[100%] 
+    }
+
+    .main .menuMobile ul button{
+        @apply  text-gray-500  w-[100%] text-start p-2
+    }
+
+    
+    .main .menuBtn{
+        @apply bg-none  top-10 left-2
+    }
+
+}
