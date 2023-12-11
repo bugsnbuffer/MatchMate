@@ -4,7 +4,15 @@ import userRoutes from "./routes/testingRoute.js"
 import authRoutes from "./routes/auth.js"
 import session from "express-session"
 import passport from "passport";
+import cloudinary from "cloudinary"
+import dotenv from "dotenv"
 
+dotenv.config()
+cloudinary.v2.config({
+    cloud_name:process.env.CLOUD_NAME,
+    api_key:process.env.API_KEY,
+    api_secret:process.env.API_SECRET
+})
 const app=express();
 
 app.use(express.json())

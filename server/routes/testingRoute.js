@@ -1,12 +1,13 @@
 import express from "express"
-import { createUser, findCompatiblity, logoutUser } from "../controllers/userController.js"
+import { createUser, findCompatiblity, logoutUser, updateUser,  } from "../controllers/userController.js"
+import { singleUpload } from "../helpers/multer.js"
 
 
 const router = express.Router()
 
 
 router.get("/compatiblity/:id1/:id2",findCompatiblity)
-router.post("/create",createUser)
+router.put("/updateuser/:userid",singleUpload,updateUser)
 router.get('/logout',logoutUser)
 
 router.get('/home',(req,res)=>res.status(200).send(`${req.user.username} you have logged in successfully`))

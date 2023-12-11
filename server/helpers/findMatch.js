@@ -15,7 +15,7 @@ export const matchCompatablity = (user1, user2) => {
   }
 
   const preferenceScore = commonPreferences * 12;
-  const interestScore = commonInterests * 8; //
+  const interestScore = commonInterests * 8; 
 
   return preferenceScore + interestScore;
 };
