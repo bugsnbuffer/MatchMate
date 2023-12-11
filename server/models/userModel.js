@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   gender: String,
   educationLevel: String,
   employmentStatus: String,
+  places: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Place' }],
   preferences: {
     cleanliness: String,
     dietary: String,
