@@ -1,0 +1,22 @@
+.main {
+    @apply flex bg-[#F8F7F4] min-h-screen justify-center
+}
+
+.main .topdiv{
+    @apply w-[400px] flex flex-col items-center
+}
+
+.main .btnbox{
+    @apply w-full flex justify-between m-5
+}
+
+.main .topdiv .btnbox button{
+    @apply p-2 w-[40%] border border-black rounded-md
+}
+
+@media only screen and (max-width:600px) {
+    .main .topdiv {
+        @apply w-[90%] mx-auto 
+    }
+    
+}

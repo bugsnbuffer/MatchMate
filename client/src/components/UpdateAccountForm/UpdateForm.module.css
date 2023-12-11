@@ -1,0 +1,32 @@
+.main {
+  @apply w-full;
+}
+
+.main .basicinfo {
+  @apply flex w-[100%];
+}
+
+.main .basicinfo .image {
+  @apply w-[50%] p-2;
+}
+
+.headings {
+  @apply p-2 text-xl font-bold;
+}
+
+.main .basicinfo .details {
+  @apply w-[50%];
+}
+
+.main .basicinfo .details input {
+  @apply w-full p-2 text-sm m-1 border rounded-sm;
+}
+
+
+.main .otherinfo select{
+    @apply w-[45%] text-sm p-2 m-2 rounded-md border border-black 
+}
+
+.main .otherinfo {
+    @apply flex flex-wrap
+}

@@ -7,7 +7,7 @@
 }
 
 .main button {
-    @apply flex w-[300px] my-10 p-2 gap-3 h-14 items-center justify-center bg-black text-white rounded-full mx-auto px-5
+    @apply flex w-[40%] my-10 p-2 gap-3 h-14 items-center justify-center bg-black text-white rounded-full mx-auto px-5
 }
 
 .main button:hover span{
@@ -20,11 +20,11 @@
 }
 
 .main h2{
-    @apply w-[300px] text-start mx-auto text-sm text-gray-600
+    @apply w-[45%] text-start mx-auto text-sm text-gray-600
 }
 
 .sideImage{
-    @apply  w-[300px] rounded-xl bg-black
+    @apply  w-[45%] rounded-xl bg-black
 }
 
 .sideImage img{
@@ -39,6 +39,10 @@
     }
     .main{
         @apply w-full
+    }
+
+    .main h2{
+        @apply w-[90%]
     }
 
     .sideImage{
