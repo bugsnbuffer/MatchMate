@@ -74,44 +74,52 @@ const createUser = asyncHandler(async (req, res) => {
 
 const updateUser = asyncHandler(async (req, res) => {
   const { userid } = req.params;
-  const {
-    firstName,
-    lastName,
-    gender,
-    age,
-    intrests,
-    preferences,
-    employmentStatus,
-    educationLevel,
-  } = req.body;
+  const uploadFields = {}
+  const allowedFields = [
+    'firstName',
+    'lastName',
+    'gender',
+    'age',
+    'intrests',
+    'preferences',
+    'employmentStatus',
+    'educationLevel',
+    
+  ]
 
-  const img = convertUri(req.file);
+  allowedFields.forEach((field)=>{
+   if(req.body[field] !== undefined){
+    uploadFields[field] = req.body[field]
+   }
+  })
 
-  const myCloud = await cloudinary.v2.uploader.upload(img.content);
-  console.log(myCloud.secure_url);
+  
 
-  const user = await User.findByIdAndUpdate(
-    userid,
-    {
-      firstName,
-      lastName,
-      gender,
-      age,
-      intrests,
-      preferences,
 
-      employmentStatus,
-      educationLevel,
-      imageUrl: myCloud.secure_url,
-    },
-    { new: true }
-  );
+  try {
+   
+    if(req.file !== undefined){
+      const img = convertUri(req.file);
+  
+      const myCloud = await cloudinary.v2.uploader.upload(img.content);
+      uploadFields['imageUrl'] = myCloud.secure_url
+      console.log(myCloud.secure_url);
+    }
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
+   
+    const user = await User.findByIdAndUpdate(userid, uploadFields, { new: true });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+   
+    res.status(200).json({ message: 'User updated successfully', user });
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Internal server error' });
   }
 
-  res.status(200).json({ message: "User updated successfully", user });
 });
 
 export { findCompatiblity, createUser, updateUser };
