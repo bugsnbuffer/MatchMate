@@ -1,8 +1,9 @@
 import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
-import { checkCompatibility } from "../helpers/findMatch.js";
+
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import passport from "passport";
+import { matchCompatablity } from "../helpers/findMatch.js";
 
 
 passport.use(User.createStrategy());
@@ -49,11 +50,12 @@ export const logoutUser=asyncHandler(async(req,res)=>{
 })
 
 const findCompatiblity = asyncHandler(async (req, res) => {
-  const { id } = req.params;
-  const userToCompare = await User.findById(id);
-  const users = await User.find({})
-   console.log(userToCompare,users)
-  const checkedUser = checkCompatibility(userToCompare,users)
+  const { id1,id2 } = req.params;
+
+  const user1 = await User.findById(id1)
+  const user2 = await User.findById(id2)
+ 
+  const checkedUser = matchCompatablity(user1,user2)
   res.status(200).json(checkedUser)
 });
 

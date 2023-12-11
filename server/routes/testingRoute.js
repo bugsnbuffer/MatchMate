@@ -5,7 +5,7 @@ import { createUser, findCompatiblity, logoutUser } from "../controllers/userCon
 const router = express.Router()
 
 
-router.get("/compatiblity/:id",findCompatiblity)
+router.get("/compatiblity/:id1/:id2",findCompatiblity)
 router.post("/create",createUser)
 router.get('/logout',logoutUser)
 
