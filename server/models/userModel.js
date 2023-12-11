@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   age: Number,
   gender: String,
   educationLevel: String,
-  emplymentStatus: String,
+  employmentStatus: String,
   preferences: {
     cleanliness: String,
     dietary: String,
