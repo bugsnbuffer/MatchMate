@@ -2,6 +2,7 @@ import express from "express";
 import ConnectDB from "./database/conn.js";
 import userRoutes from "./routes/testingRoute.js"
 import authRoutes from "./routes/auth.js"
+import placeRoutes from "./routes/placeRoutes.js"
 import session from "express-session"
 import passport from "passport";
 import cloudinary from "cloudinary"
@@ -33,7 +34,8 @@ app.use(session({
     resave:false,
     secret:process.env.SECRET,
     cookie:{
-        secure:false
+        secure:false,
+        sameSite:"none"
     }
 }))
 
@@ -45,6 +47,7 @@ app.use(passport.session());
 
 app.use("/api",userRoutes)
 app.use("/auth",authRoutes)
+app.use("/place",placeRoutes)
 
 ConnectDB().then(()=>{
     app.listen(3000,()=>{
