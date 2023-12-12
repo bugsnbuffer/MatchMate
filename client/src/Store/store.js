@@ -9,3 +9,11 @@ export const formStepperCount=create((set)=>({
 
 
 }))
+
+
+export const userFormDetails= create((set)=>({
+    userform:{},
+    updateform:(data)=>set((state)=>({userform:{...state.userform,...data}}))
+
+
+}))

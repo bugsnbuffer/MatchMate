@@ -7,7 +7,11 @@
 }
 
 .main .basicinfo .image {
-  @apply w-[50%] p-2;
+  @apply w-[50%]  relative border border-gray-400 rounded-md ;
+}
+
+.main .basicinfo .image img{
+  @apply rounded-md h-full object-cover
 }
 
 .headings {
@@ -15,11 +19,11 @@
 }
 
 .main .basicinfo .details {
-  @apply w-[50%];
+  @apply w-[50%] ; 
 }
 
 .main .basicinfo .details input {
-  @apply w-full p-2 text-sm m-1 border rounded-sm;
+  @apply w-full p-2 text-sm m-1 border rounded-sm capitalize;
 }
 
 
@@ -30,3 +34,47 @@
 .main .otherinfo {
     @apply flex flex-wrap
 }
+
+.main .nextBtn{
+  @apply p-2 m-2 border  border-gray-300 rounded-full w-[45%] bg-gray-100 font-bold
+}
+
+.main .btnbox{
+  @apply w-full flex justify-end
+}
+
+
+.interestsbox{
+  @apply flex flex-wrap h-min p-2  justify-around
+}
+
+.interests{
+  @apply p-2 flex justify-center m-2 border rounded-xl border-black w-[150px]
+}
+
+.selectedInterest {
+  @apply bg-gray-200;
+  /* Add any other styling for selected interests */
+}
+
+
+.preferencbox{
+  @apply p-2 m-2 my-4 border border-black rounded-md  
+}
+
+.preferencbox input[type="radio"]{
+  @apply hidden
+}
+
+.preferencbox label{
+  @apply p-2 m-2 border flex border-gray-400 
+}
+
+.preferencbox input[type="radio"]:checked + label{
+  @apply bg-gray-200
+}
+
+
+
+
+
