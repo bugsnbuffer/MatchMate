@@ -1,0 +1,41 @@
+.main{
+    animation:  carouselAnimation 15s  infinite;
+    transition: transform 0.5s ease-in-out;
+    @apply bg-white h-[95%] min-w-[200px] max-w-[200px] rounded-2xl m-2 relative border shadow-xl ;
+}
+
+.main img{
+    @apply w-[100%] h-[100%] rounded-2xl object-cover
+}
+
+.main .details{
+    @apply absolute text-white bottom-2 left-5 capitalize font-semibold text-xs
+}
+
+
+
+.main .prefrences{
+    @apply flex gap-2 mt-4 shadow-lg 
+}
+.main .prefrences h1{
+    @apply border rounded-lg px-1 border-gray-400 text-[6px]
+}
+
+
+@keyframes carouselAnimation {
+    0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(-200%);
+      }
+      75% {
+        transform: translateX(-300%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+  }

@@ -1,7 +1,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Asul&family=Hedvig+Letters+Serif:opsz@12..24&family=Roboto:wght@400;700&display=swap');
 
 .main{
-    @apply min-h-screen flex justify-center items-start  bg-[#F8F7F4] 
+    @apply min-h-screen flex flex-col justify-start items-center  bg-[#F8F7F4] 
 }
 
 .main .googleBtn{
@@ -26,6 +26,11 @@
 
 .main .topdiv button{
     @apply bg-black text-white p-2 rounded-full px-4 m-5
+}
+
+
+.main .middiv {
+    @apply h-[300px] w-full   my-20 flex items-center  overflow-hidden
 }
 
 @media only screen and (max-width:600px){
