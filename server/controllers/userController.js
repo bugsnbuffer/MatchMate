@@ -30,12 +30,15 @@ passport.use(
       scope: ["profile", "email"],
     },
     function (accessToken, refreshToken, profile, cb) {
+      console.log(profile.photos[0].value);
       User.findOrCreate(
         { googleId: profile._json.sub },
         {
           googleId: profile._json.sub,
           username: profile._json.name,
           email: profile._json.email,
+          imageUrl:profile._json.picture
+
         },
         function (err, user) {
           return cb(err, user);

@@ -7,14 +7,20 @@ import User from "../models/userModel.js";
 const createPlace = asyncHandler(async (req, res) => {
   try {
     const _id = req.user;
-    const { description, budget, coordinates, hasFurniture, hasKitchen,address } =
-      req.body;
+    const {
+      description,
+      budget,
+      coordinates,
+      hasFurniture,
+      hasKitchen,
+      address,
+    } = req.body;
 
     const files = req.files;
 
-    const user = await User.findById(_id)
-    if(!user){
-    res.status(404).json({message:"user not found"})
+    const user = await User.findById(_id);
+    if (!user) {
+      res.status(404).json({ message: "user not found" });
     }
 
     const uploadPromises = files.map((file) => {
@@ -36,27 +42,25 @@ const createPlace = asyncHandler(async (req, res) => {
     });
 
     const results = await Promise.all(uploadPromises);
-     
+
     const place = await Place.create({
-        description,
-        budget,
-        hasFurniture,
-        hasKitchen,
-        location: {
-            type: 'Point', 
-            coordinates: coordinates, 
-        },
-        address,
-        imgUrls:[...results]
+      description,
+      budget,
+      hasFurniture,
+      hasKitchen,
+      location: {
+        type: "Point",
+        coordinates: coordinates,
+      },
+      address,
+      imgUrls: [...results],
+    });
 
-    })
-
-    if(place){
-        user.places.push(place._id)
-        await user.save()
-        res.status(200).json(place)
+    if (place) {
+      user.places.push(place._id);
+      await user.save();
+      res.status(200).json(place);
     }
-   
   } catch (error) {
     console.error("Error in createPlace:", error);
     res

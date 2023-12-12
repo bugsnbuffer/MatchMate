@@ -12,7 +12,7 @@ import UpdateForm4 from "../../components/UpdateAccountForm/UpdateStep4Form";
 
 const UpdateAccount = () => {
   const { count } = formStepperCount((state) => state);
-  const steps = ["Basicinfo", "Interests", "Prefrences", "Finish"];
+  const steps = ["Basicinfo", "Interests", "Prefrences", "Finish",];
 
   const formComponents = [
     <UpdateForm1 key="step0" />,

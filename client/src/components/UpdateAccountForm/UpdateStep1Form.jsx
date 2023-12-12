@@ -29,7 +29,6 @@ const UpdateForm1 = () => {
       updateform(values);
       // Handle form submission here
       goForword();
-      console.log(userform);
       
     },
   });

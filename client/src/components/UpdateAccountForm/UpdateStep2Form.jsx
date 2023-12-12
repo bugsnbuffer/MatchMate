@@ -15,7 +15,6 @@ const UpdateForm2 = () => {
     onSubmit: async (values, { setSubmitting }) => {
       updateform(values)
       goForword();
-      console.log(userform);
       setSubmitting(false);
     },
   });
