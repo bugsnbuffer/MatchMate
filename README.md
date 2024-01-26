@@ -16,7 +16,7 @@ MatchMate is developed using the MERN stack, which includes:
 
 - **MongoDB:** Database for storing user data and preferences.
 - **Express:** Server framework for building the backend.
-- **React:** Frontend library for building user interfaces.
+- **React:** Frontend library for building user interface.
 - **Node.js:** JavaScript runtime for server-side development.
 
 ## 🤝 Contributing
